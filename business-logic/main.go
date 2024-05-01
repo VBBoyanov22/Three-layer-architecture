@@ -9,7 +9,7 @@ import (
 )
 
 // Define the file where user data is stored
-const userDataFile = "user_data.txt"
+const userDataFile = "data/user_data.txt"
 
 func main() {
 	// Loop to display menu options
@@ -81,7 +81,7 @@ func register() {
 	defer file.Close()
 
 	// Write the new user information to user_data.txt
-	_, err = fmt.Fprintf(file, "%s %s\n", username, password)
+	_, err = fmt.Fprintf(file, "%s,%s\n", username, password)
 	if err != nil {
 		fmt.Println("Error:", err)
 		return
